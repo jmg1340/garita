@@ -1,0 +1,59 @@
+
+<div id="titolSeccio"><%=title%></div>
+
+
+<table id="taula_BuscarConsultes" class="body_taula">
+
+	<caption>Buscar per...</caption>
+	<thead>
+	</thead>
+	<tbody>
+		<form id="formulariConsultes" method="GET" action="/consultes">
+			<tr>
+				<td>Nom:</td>
+				<input type="hidden"   id="codi_personal"     name="objFORM[idPersonal]" value="<%= objFORM.idPersonal %>" />
+				<td><input type="text" id="autocompletarNom2" name="objFORM[autoCompletarNom2]" value="<%= objFORM.autoCompletarNom2 %>"/></td>
+			</tr>
+			<tr>
+				<input type="hidden"   id="idES2" 								value="<%= objFORM.es %>" /> 
+				<td>E/S:</td>
+				<td><select            id="idES"              name="objFORM[es]" value="<%= objFORM.es %>"></select></td>
+			</tr>
+			<tr>
+				<td>Dates</td>
+				<td>entre <input type="date"  name="objFORM[data1]" id="seleccioData1" value="<%= objFORM.data1 %>"/> i  
+						  <input type="date"  name="objFORM[data2]" id="seleccioData2" value="<%= objFORM.data2 %>"/></td>
+			<tr>
+				<td colspan="2"><input type="submit" name="consulta" value="Buscar" id="novaConsulta" /></td>
+				
+			</tr>
+		</form>	
+	</tbody>
+</table>
+
+
+
+<table id="taula_consultes">
+	<thead>
+		<tr>
+			<th>Data</th>
+			<th>Hora</th>
+			<th>E/S</th>
+			<th>Nom</th>
+			<th>Vehicle</th>
+			<th>Matricula</th>
+		</tr>
+	</thead>
+	<tbody>
+		<% var i; for (i=0; i < tbl.length; i++){ %>
+			<tr>
+				<td><%= tbl[i].dataDDMMAAAA %></td>
+				<td><%= tbl[i].horaHHMM %></td>
+				<td><%= tbl[i].ES %></td>
+				<td><%= tbl[i].personal.nom %></td>
+				<td><%= tbl[i].personal.vehicle %></td>
+				<td><%= tbl[i].personal.matricula %></td>
+			</tr>
+		<% } %>
+	</tbody>
+</table>

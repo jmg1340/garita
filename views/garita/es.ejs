@@ -1,0 +1,88 @@
+<div  id="titolSeccio"><%= title %></div>
+
+
+<!-- <button id="novaES">nova E/S</button> -->
+
+<table id="taula_novaES" class="body_taula">
+
+	<caption>Nou registre</caption>
+
+	<thead>
+		<tr>
+			<th>Nom</th>
+			<th>Vehicle</th>
+			<th>Matricula</th>
+			<!-- <th>Data</th> -->
+			<th>Hora</th>
+			<th>E/S</th>
+			<th></th>
+		</tr>
+	</thead>
+	<tbody>
+		<tr>
+			<form id="formulariAfegirES" method="POST" action="/es/afegir">
+				<input type="hidden"  id="codi_personal" name="objES[idPersonal]" value="<%= objES.idPersonal %>" />
+				<td><input type="text" id="autocompletarNom" name="objES[autocompletarNom]" value="<%= objES.autocompletarNom %>"/></td>
+				<td><input type="text" id="autocompletarVehicle" name="objES[autocompletarVehicle]" value="<%= objES.autocompletarVehicle %>"/></td>
+				<td><input type="text" id="autocompletarMatricula" name="objES[autocompletarMatricula]" value="<%= objES.autocompletarMatricula %>"/></td>
+				 
+				<% objES.data  = dataEnviada.replace( /(\d{2})-(\d{2})-(\d{4})/, "$2/$1/$3");  //canvia dd/mm/aaaa per mm/dd/aaaa %>
+				<input type="hidden" id="data2" name="objES[data]" value="<%= objES.data %>" />
+				<!--
+				<td><input type="text" name="objES[data]" value="<%= objES.data %>" disabled="true" /></td>
+				 -->
+				<td><input type="text" name="objES[hora]" value="<%= objES.hora %>" /></td>
+				<td><input type="text" name="objES[ES]" value="<%= objES.ES %>" /></td>
+				<td><input type="submit" name="afegirNouES" value="afegir" id="afegirNouES" /></td>
+			</form>
+		</tr>
+	</tbody>
+</table>
+
+
+<!-- //////////////  Taula amb llistat de entrades sortides del dia ///////// -->
+<table id="taula_entrades_sortides" class="body_taula">
+	<caption>
+		<form>
+			<label>Seleccionar data:</label>
+			<input type="date"  name="data" id="seleccioData" value="<%= dataEnviada %>"/>
+		</form>
+	</caption>
+
+	<thead>
+		<tr>
+			<th>Nom</th>
+			<th>Vehicle</th>
+			<th>Matricula</th>
+			<th>Hora</th>
+			<th>E/S</th>
+			<th></th>
+		</tr>
+	</thead>
+	<tbody>
+		<% var i; for (i=0; i < tbl.length; i++){ %>
+			<tr>
+				<td><%= tbl[i].personal.nom %></td>
+				<td><%= tbl[i].personal.vehicle %></td>
+				<td><%= tbl[i].personal.matricula %></td>
+				<td><%= tbl[i].horaHHMM %></td>
+				<td><%= tbl[i].ES %></td>
+				<td>
+					<form action="/es/<%= tbl[i].codiES %>/eliminar?_method=DELETE" method="POST">
+						<input type="hidden" name="formdata" value="<%= tbl[i].data %>"/> 
+						<input type="submit" onClick="return confirm('Confirmar eliminació de:\n\nNOM:\t\t<%= tbl[i].personal.nom %>\nVEHICLE:\t\t<%= tbl[i].personal.vehicle %>\nMATRICULA:\t<%= tbl[i].personal.matricula %>\nHORA:\t\t<%= tbl[i].hora %>\nE/S:\t\t\t<%= tbl[i].ES %>\n');" value="Eliminar" />
+					</form>
+				</td>
+			</tr>
+		<% } %>
+	</tbody>
+</table>
+
+
+
+
+
+
+
+
+

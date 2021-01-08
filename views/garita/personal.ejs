@@ -1,0 +1,55 @@
+<div id="titolSeccio"><%=title%></div>
+
+<button id="nouPersonal">Nou Personal</button>
+
+<table id="taula_personal" class="body_taula">
+	<caption>
+		<form method="GET" action="/personal">
+			<label>Buscar per:</label>
+			<select name="campBuscar">
+				<option value ="nom" selected>nom</option>
+				<option value ="vehicle">vehicle</option>
+				<option value ="matricula">matricula</option>
+			</select>
+			<input tye="text" placeholder="text a buscar" name="txtBuscar"/>
+			<input type="submit" value="buscar"/>
+		</form>
+	</caption>
+	<thead>
+		<tr>
+			<th>Nom</th>
+			<th>Vehicle</th>
+			<th>Matricula</th>
+			<th>NIF</th>
+			<th>empresa</th>
+			<th>categoria</th>
+			<th colspan="2"></th>
+		</tr>
+	</thead>
+	<tbody>
+		<% var i; for (i=0; i < tbl.length; i++){ %>
+			<tr>
+				<td><%= tbl[i].nom %></td>
+				<td><%= tbl[i].vehicle %></td>
+				<td><%= tbl[i].matricula %></td>
+				<td><%= tbl[i].nif %></td>
+				<td><%= tbl[i].empresa %></td>
+				<td><%= tbl[i].categoria %></td>
+				<td><a href="/personal/<%= tbl[i].codi %>/edicio">Editar</a></td>
+				<td>
+					<form action="/personal/<%= tbl[i].codi %>/eliminar?_method=DELETE" method="POST">
+						<input type="submit" onClick='return confirm("Confirmar eliminació de:\n\n\t<%= tbl[i].nom %>\n\n*** Atencio!: TOTES les entrades i sortides de aquesta persona SERAN ELIMINADES ***\n\n\n");' value="Eliminar" />
+					</form>
+				</td>
+			</tr>
+		<% } %>
+	</tbody>
+</table>
+
+
+
+
+
+
+
+

@@ -1,0 +1,3 @@
+openssl genrsa -out garita-key.pem 2048
+openssl req -new -sha256 -key garita-key.pem -out garita-csr.pem
+openssl x509 -req -in garita-csr.pem -signkey garita-key.pem -out garita-cert.pem

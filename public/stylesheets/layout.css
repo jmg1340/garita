@@ -1,0 +1,301 @@
+
+#page-wrap{
+	width: 1000px;
+	margin: 20px auto auto;
+}
+
+img{
+  width: 1000px;
+  height: 90px;
+}
+
+/**** MENU ****/
+
+#menu {
+    width: 100%;
+    height: 35px;
+    font-size: 16px;
+    font-family: Tahoma, Geneva, sans-serif;
+    font-weight: bold;
+    text-align: center;
+    text-shadow: 3px 2px 3px gray;
+    background-color: lavender;
+    border-radius: 8px;
+}
+
+#menu ul {
+    height: auto;
+    padding: 8px 0px;
+    margin: 0px;
+}
+
+#menu li {
+display: inline;
+padding: 20px;
+}
+
+#menu a {
+    text-decoration: none;
+    color: darkblue;
+    padding: 8px 8px 8px 8px;
+}
+
+#menu a:link {
+  color: lightcoral;
+}
+
+#menu a:hover {
+  color: lightyellow;
+}
+
+#menu a:active {
+  color: lightcoral;
+}
+
+
+/**** TITOL SECCIO ****/
+
+#titolSeccio{
+  margin: 10px 0px 30px 0px;
+  font: bold 22px Verdana;
+}
+
+
+/**** ERRORS D'INTRODUCCIO DE DADES ALS FORMULARIS ****/
+#MissatgesError{
+  color: #f61;
+  font-size: smaller;
+}
+
+
+/************ per a les taules de PERSONAL, ENTRADES / SORTIDES i CONSULTES ***********/
+.body_taula{
+  border-collapse: collapse;
+  width: 100%;
+}
+
+.body_taula caption{
+  text-align: left;
+}
+
+.body_taula caption button{
+  width: 70px;
+  margin-bottom: 10px;
+}
+
+.body_taula thead th{
+  border: 2px solid black;
+  background-color: indianred;
+  color: white;
+}
+
+.body_taula tbody td{
+  border: 1px solid darkgrey;
+  font: normal 12px Verdana; 
+}
+
+
+/***************************************/
+/**** pantalla nou registre personal ***/
+/***************************************/
+.login{
+  margin: auto 40%;
+}
+
+
+
+
+/***************************************/
+/**** pantalla Entrades / Sortides *****/
+/***************************************/
+
+
+/* --- widget Autocomplete ---*/
+.ui-menu-item {
+  font: normal 12px verdana;
+}
+
+
+
+#novaES{
+  float: right;
+}
+
+
+/******** taula_novaES *****/
+#taula_novaES{
+  table-layout: fixed;
+  margin-bottom: 20px;
+}
+
+#taula_novaES input{ width: 90%;}
+
+#taula_novaES thead th{
+  background-color: moccasin;
+  color: darkslateblue;
+  border-color: darkseagreen;
+}
+
+     /*--- capsaleres de columnes*/
+#taula_novaES th:nth-child(1){ width: 20%;}  /* columna "Nom"*/
+#taula_novaES th:nth-child(2){ width: 20%;}  /* columna "Vehicle"*/
+#taula_novaES th:nth-child(3){ width: 15%;}  /* columna "Matricula"*/
+#taula_novaES th:nth-child(4){ width: 10%;}  /* columna "Data"*/
+#taula_novaES th:nth-child(5){ width: 10%;}  /* columna "Hora"*/
+#taula_novaES th:nth-child(6){ width: 5%;}  /* columna "ES"*/
+#taula_novaES th:nth-child(7){ width: 10%;}  /* columna "Afegir"*/
+
+
+
+
+/******** taula_entrades_sortides *****/
+#taula_entrades_sortides{
+  table-layout: fixed;
+}
+
+     /*--- capsaleres de columnes*/
+#taula_entrades_sortides th:nth-child(1){ width: 20%;}  /* columna "Nom"*/
+#taula_entrades_sortides th:nth-child(2){ width: 20%;}  /* columna "Vehicle"*/
+#taula_entrades_sortides th:nth-child(3){ width: 15%;}  /* columna "Matricula"*/
+#taula_entrades_sortides th:nth-child(4){ width: 10%;}  /* columna "Hora"*/
+#taula_entrades_sortides th:nth-child(5){ width: 5%;}   /* columna "E/S"*/
+#taula_entrades_sortides th:nth-child(6){ width: 15%;}  /* columna "Editar"*/
+#taula_entrades_sortides th:nth-child(7){ width: 15%;}  /* columna "Eliminar"*/
+
+   /*--- centrar dades 4 ultimes columnes*/
+#taula_entrades_sortides td:nth-child(4){ text-align: center; }  /* columna "Hora"*/
+#taula_entrades_sortides td:nth-child(5){ text-align: center; }  /* columna "E/S"*/
+#taula_entrades_sortides td:nth-child(6){ text-align: center; }  /* columna "Editar"*/
+#taula_entrades_sortides td:nth-child(7){ text-align: center; }  /* columna "Eliminar"*/
+
+#taula_entrades_sortides tr:nth-child(odd){
+  background-color:antiquewhite;
+}
+
+
+
+/***************************************/
+/**** pantalla nou registre ES ***/
+/***************************************/
+
+
+
+
+
+/***************************************/
+/********** pantalla personal **********/
+/***************************************/
+
+#nouPersonal{
+  float: right;
+}
+
+
+/******** taula_personal *****/
+#taula_personal{
+  table-layout: fixed;
+}
+
+     /*--- capsaleres de columnes*/
+#taula_personal th:nth-child(1){ width: 15%;}  /* columna "Nom"*/
+#taula_personal th:nth-child(2){ width: 15%;}  /* columna "Vehicle"*/
+#taula_personal th:nth-child(3){ width: 7%;}  /* columna "Matricula"*/
+#taula_personal th:nth-child(4){ width: 10%;}  /* columna "Empresa"*/
+#taula_personal th:nth-child(5){ width: 10%;}  /* columna "Nif"*/
+#taula_personal th:nth-child(6){ width: 12%;}  /* columna "Categoria"*/
+#taula_personal th:nth-child(7){ width: 12%;}  /* columna "Editar"*/
+#taula_personal th:nth-child(8){ width: 0%;}  /* columna "Eliminar"*/
+
+   /*--- centrar dades 4 ultimes columnes*/
+#taula_personal td:nth-child(6){ text-align: center; }  /* columna "Editar"*/
+#taula_personal td:nth-child(7){ text-align: center; }  /* columna "Eliminar"*/
+
+
+/***************************************/
+/**** pantalla nou registre personal ***/
+/***************************************/
+
+
+.marcNouEdicioRegistrePersonal{
+  display: block;
+  width: 40%;
+  margin:0 auto 0 auto;
+  font: normal 16px verdana;
+
+}
+
+.marcNouEdicioRegistrePersonal label{
+}
+
+.marcNouEdicioRegistrePersonal input{
+  border: 1px solid green;
+  width: 100%;
+  margin-bottom: 10px;
+  background-color: ivory;
+  font: normal 16px verdana;
+}
+
+.marcNouEdicioRegistrePersonal input:last-child{
+  width: 20%;
+  margin-top: 20px;
+  float:right;
+  font: bold 14px Verdana;
+  background-color: salmon;
+}
+
+.marcNouEdicioRegistrePersonal input:last-child:hover{
+  background-color: indianred;
+}
+
+
+
+/***************************************/
+/********** pantalla CONSULTES **********/
+/***************************************/
+
+
+
+
+#taula_BuscarConsultes{
+  table-layout: fixed;
+  width: 50%;
+  border-collapse: collapse;
+  margin: auto auto 30px ;
+}
+
+
+
+
+/******** taula_consultes *****/
+#taula_consultes{
+  table-layout: fixed;
+  width: 100%;
+  border-collapse: collapse;
+
+}
+
+
+#taula_consultes thead th{
+  border: 2px solid black;
+  background-color: moccasin;
+  color: darkslateblue;
+
+}
+
+     /*--- capsaleres de columnes*/
+#taula_consultes th:nth-child(1){ width: 10%;}  /* columna "Data"*/
+#taula_consultes th:nth-child(2){ width: 10%;}  /* columna "Hora"*/
+#taula_consultes th:nth-child(3){ width: 5%;}  /* columna "E/S"*/
+#taula_consultes th:nth-child(4){ width: 25%;}  /* columna "Nom"*/
+#taula_consultes th:nth-child(5){ width: 25%;}  /* columna "Vehicle"*/
+#taula_consultes th:nth-child(6){ width: 25%;}  /* columna "Matricula"*/
+
+
+   /*--- centrar dades 4 ultimes columnes*/
+#taula_consultes td:nth-child(1){ text-align: center; }  /* columna "Data"*/
+#taula_consultes td:nth-child(2){ text-align: center; }  /* columna "Hora"*/
+#taula_consultes td:nth-child(3){ text-align: center; }  /* columna "E/S"*/
+
+#taula_consultes tbody td{
+  border: 1px solid black;
+}

@@ -1,0 +1,26 @@
+<div id="titolSeccio"><%=title%></div>
+
+<!-- formulari AFEGIR REGISTRE -->
+
+<div class="marcNouEdicioRegistrePersonal">
+	
+	<form id="formulariPersonal" action="/personal/afegirPersonal" method="POST">
+		<label>Nom:</label>
+		<input type="text" id="idNom" name="objPersonal[nom]" value="<%= objPersonal.nom %>" />
+		<label>Vehicle:</label>
+		<input type="text" id="idVehicle" name="objPersonal[vehicle]" value="<%= objPersonal.vehicle %>" />
+		<label>Matricula:</label>
+		<input type="text" id="idMatricula" name="objPersonal[matricula]" value="<%= objPersonal.matricula %>" />
+		<label>NIF:</label>
+		<input type="text" id="idNif" name="objPersonal[nif]" value="<%= objPersonal.nif %>" />
+		<label>Empresa:</label>
+		<input type="text" id="idEmpresa" name="objPersonal[empresa]" value="<%= objPersonal.empresa %>" />
+		<label>Categoria:</label>
+		<input type="hidden" id="idCategoria2" value="<%= objPersonal.categoria %>" />
+		<select id="idCategoria" name="objPersonal[categoria]" value="<%= objPersonal.categoria %>"></select>
+		<!-- Allow form submission with keyboard without duplicating the dialog button -->
+		<hr/>
+		<input id="btEnviarPersonal" type="submit" value="Crear">
+	</form>
+
+</div>

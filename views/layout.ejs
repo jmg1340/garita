@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="es">
+	<head>
+		<meta charset="utf-8">
+		<title>GARITA</title>
+
+		<link rel="stylesheet" type="text/css" href="/stylesheets/index.css">	
+		<link rel="stylesheet" type="text/css" href="/javascripts/jquery-ui-1.11.4/jquery-ui.css">
+		<link rel="stylesheet" type="text/css" href="/stylesheets/layout.css">
+
+		<script src="/javascripts/jquery-2.1.4.min.js"></script>
+		<script src="/javascripts/jquery-ui-1.11.4/jquery-ui.min.js"></script>
+		<script src="/javascripts/es.js"></script>
+		<script src="/javascripts/personal.js"></script>
+		<script src="/javascripts/consultes.js"></script>
+
+
+	</head>
+
+	<body>
+		<div id="page-wrap">
+			<header class="main" id="h1">
+				<!-- <h2>Control entrades i sortides</h2> -->
+				<img src="/images/garita.png">
+			</header>
+
+			<% if (session.user){ %>   
+				<nav class="main" role="navigation">
+					<div id="menu">
+					<ul>
+						<li><a href="/es/" id="menu2">Entrades / Sortides</a></li>
+						<li><a href="/personal" id="menu3">Personal</a></li>
+						<li><a href="/consultes" id="menu4">Consultes</a></li>
+						<li><a href="/logout" id="menu5">Cerrar sesion</a> (<%= session.user.username%>) </li>
+					</ul>
+					<div>
+				</nav>
+			<% } %>	
+			
+
+			<section class="main" id="s1">
+				<% if (zErrores.length){ %>
+						<span id="MissatgesError">
+						Corretgir errors <br/>
+						<% for (var i in zErrores) { %>						
+							<span> <%= zErrores[i].message %><br/> </span>
+						<% } %>
+						</span>
+				<% } %>
+
+				<div><%- body %></div>
+			</section>
+
+
+			<footer class="main" id="f1">
+				
+			</footer>
+		</div>
+	</body>
+</html>

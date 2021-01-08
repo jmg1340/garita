@@ -1,0 +1,30 @@
+<div  id="titolSeccio"><%= title %></div>
+
+
+<table class="body_taula">
+	<thead>
+		<tr>
+			<th>Nom</th>
+			<th>Vehicle</th>
+			<th>Matricula</th>
+			<th>Data</th>
+			<th>Hora</th>
+			<th>E/S</th>
+			<th></th>
+		</tr>
+	</thead>
+	<tbody>
+		<tr>
+			<form method="POST" action="/es/afegir" id="formNovaES">
+				<input type="hidden" name="codi_personal" id="codi_personal" value="" />
+				<td><input type="text" id="autocompletarNom" name="autocompletarNom" value=""/></td>
+				<td><input type="text" id="autocompletarVehicle" name="autocompletarVehicle" value=""/></td>
+				<td><input type="text" id="autocompletarMatricula" name="autocompletarMatricula" value=""/></td>
+				<td><input type="text" name="afegirData" value="" disabled="true" /></td>
+				<td><input type="text" name="afegirHora" value="" /></td>
+				<td><input type="text" name="afegirES" value="" /></td>
+				<td><input type="submit" value="afegir" disabled="true" /></td>
+			</form>
+		</tr>
+	</tbody>
+</table>
